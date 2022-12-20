@@ -1,0 +1,59 @@
+<h1>Notas</h1>
+
+<br>
+<span class="under">Faça sua anotação</span>
+
+<div id="content_form">
+
+    <form id="formNotas" onsubmit="formInc(event)">
+
+        <fieldset>
+            <legend>Dados Site</legend>
+            <br>
+            <label for="incidente">Chamado:</label>
+            <br>
+            <input type="text" name="incidente">
+            <br>
+            <label for="site">Site:</label>
+            <br>
+            <input type="text" name="site">
+            <br>
+            <label for="operação">Operação:</label>
+            <br>
+            <input type="text" name="operação">
+            <br>
+            <label for="assunto">Assunto:</label>
+            <br>
+            <input type="text" name="assunto">
+            <br>
+            <label for="ferramenta">Ferramenta:</label>
+            <br>
+            <input type="text" id="ferramenta" name="ferramenta">
+            <hr>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Atualização</legend>
+            <br>
+            <textarea name="atualização" id="" cols="30" rows="10"></textarea>
+        </fieldset>
+
+        <button type="submit">Gerar</button>
+        
+
+    </form>
+
+    <div id="form_res">
+
+
+        
+    
+    </div>
+    <div>
+        <button onclick="copy()">Copiar</button>
+    </div>
+    
+
+</div>
+
