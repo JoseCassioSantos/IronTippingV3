@@ -1,4 +1,36 @@
 
+
+
+
+addButton = () => {
+
+    
+var chamado = document.querySelector("#incidente")
+var site = document.querySelector("#site")
+var operacao = document.querySelector("#operação")
+var assunto = document.querySelector("#assunto")
+var descricao = document.querySelector("#descricao")
+var atualização = document.querySelector("#atualização")
+
+create(chamado.value, site.value, operacao.value, assunto.value, descricao.value, atualização.value);
+
+};
+
+create = (cha, sit, op, ass, desc, att) =>{
+    var data = {
+        chamado: cha,
+        site: sit,
+        operacao: op,
+        assunto: ass,
+        descricao: desc,
+        atualização: att
+
+    };
+
+    return firebase.database().ref().child('incidents').push(data);
+};
+
+/*
 formInc = (evento) => {
     evento.preventDefault();
 
@@ -26,3 +58,4 @@ copy = () =>{
     console.log(outputRes)
 }
 
+*/

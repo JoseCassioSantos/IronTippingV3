@@ -5,30 +5,33 @@
 
 <div id="content_form">
 
-    <form id="formNotas" onsubmit="formInc(event)">
+
+
+
+    <form id="formNotas" onsubmit="addButton(event)">
 
         <fieldset>
             <legend>Dados Site</legend>
             <br>
             <label for="incidente">Chamado:</label>
             <br>
-            <input type="text" name="incidente">
+            <input id="incidente" type="text" name="incidente">
             <br>
             <label for="site">Site:</label>
             <br>
-            <input type="text" name="site">
+            <input id="site" type="text" name="site">
             <br>
             <label for="operação">Operação:</label>
             <br>
-            <input type="text" name="operação">
+            <input id="operação" type="text" name="operação">
             <br>
             <label for="assunto">Assunto:</label>
             <br>
-            <input type="text" name="assunto">
+            <input id="assunto" type="text" name="assunto">
             <br>
-            <label for="ferramenta">Ferramenta:</label>
+            <label for="descricao">Descrição:</label>
             <br>
-            <input type="text" id="ferramenta" name="ferramenta">
+            <input type="text" id="descricao" name="descricao">
             <hr>
             <br>
         </fieldset>
@@ -36,12 +39,10 @@
         <fieldset>
             <legend>Atualização</legend>
             <br>
-            <textarea name="atualização" id="" cols="30" rows="10"></textarea>
+            <textarea name="atualização" id="atualização" cols="30" rows="10"></textarea>
         </fieldset>
 
-        <button type="submit">Gerar</button>
-        
-
+        <button>Gerar</button>
     </form>
 
     <div id="form_res">
@@ -50,9 +51,7 @@
         
     
     </div>
-    <div>
-        <button onclick="copy()">Copiar</button>
-    </div>
+
     
 
 </div>
