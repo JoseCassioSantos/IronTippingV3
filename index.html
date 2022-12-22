@@ -63,6 +63,14 @@
 <div id="home_content">
 
 
+    <div>
+        <input type="text" id="nome">
+        <input type="email" id="email">
+        <button id="sub">enviar</button>
+
+
+    </div>
+
 <div class="card_main">
     
     <span class="material-symbols-outlined" onclick="pages('links')" title="Links">dynamic_feed<p>Links</p></span>
@@ -152,15 +160,11 @@ E entrar em contato se necessario
         </div>
 
     </div>
-    
-    <script src="script/script.js"></script>
-    <script src="script/perfil.js"></script>
-    <script src="script/pages.js"></script>
-    <script src="script/notas.js"></script>
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -178,8 +182,29 @@ E entrar em contato se necessario
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        const db = getDatabase(app);
+
+        document.getElementById("sub").addEventListener('click',  function writeUserData(nome, email) {
+        
+        name =  document.getElementById('nome').value
+        email = document.getElementById('email').value
+        
+        const db = getDatabase();
+        set(ref(db, 'users/' ), {
+        username: name,
+        email: email,
+    
+  })
+});
+
+          
       </script>
+    
+    <script src="script/script.js"></script>
+    <script src="script/perfil.js"></script>
+    <script src="script/pages.js"></script>
+    <script src="script/notas.js"></script>
+    
     <footer>
         Ver. 0.0.0
     </footer>
