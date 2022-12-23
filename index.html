@@ -1,215 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/icons/relogio-alarma.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,200..700,0..1,-50..200" />
-    <link rel="stylesheet" href="css\main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="src/icons/relogio-alarma.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,200..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="css\main.css" />
     <title>IronTippingV3</title>
-</head>
-<body>
-    
-    <header id="cabecalho"> 
-        
-
-        <span href="#" id="perfil">
-           <span id="perfil_content" onclick="on()">?</span>
-        </span>
-        <h5 id="hora">?</h5>
+  </head>
+  <body>
+    <header id="cabecalho">
+      <span href="#" id="perfil">
+        <span id="perfil_content" onclick="on()">?</span>
+      </span>
+      <h5 id="hora">?</h5>
     </header>
 
-    
-<main id="main_content">
+    <main id="main_content">
+      <div id="side_bar" class="sidenav">
+        <span
+          id="openMenu"
+          class="material-symbols-outlined"
+          onclick="openNav()"
+          title="Expandir"
+          >menu</span
+        >
+        <span
+          id="closeMenu"
+          class="material-symbols-outlined"
+          onclick="closeNav()"
+          title="Recolher"
+          >keyboard_double_arrow_left</span
+        >
 
-    <div id="side_bar" class="sidenav"> 
-
-        <span id="openMenu" class="material-symbols-outlined" onclick="openNav()"  title="Expandir">menu</span> 
-        <span id="closeMenu" class="material-symbols-outlined" onclick="closeNav()" title="Recolher">keyboard_double_arrow_left</span>
-        
         <div class="link_conteiner">
-            <span class="material-symbols-outlined" onclick="home()" title="Links">home<p>Home</p></span>
+          <span class="material-symbols-outlined" onclick="home()" title="Links"
+            >home
+            <p>Home</p></span
+          >
         </div>
 
         <div class="link_conteiner">
-            <span class="material-symbols-outlined" onclick="pages('links')" title="Links">dynamic_feed<p>Links</p></span>
+          <span
+            class="material-symbols-outlined"
+            onclick="pages('links')"
+            title="Links"
+            >dynamic_feed
+            <p>Links</p></span
+          >
         </div>
 
-        <div class="link_conteiner" >
-            <span class="material-symbols-outlined" class="active" onclick="pages('notas')" title="Anotações">chrome_reader_mode<p>Notas</p></span>
-        </div>
- 
         <div class="link_conteiner">
-            <span class="material-symbols-outlined" onclick="pages('andamento')" title="Base">view_compact_alt<p>Base</p></span>
-        </div >
-        
-        
-        <div class="link_conteiner">
-            <span class="material-symbols-outlined" onclick="pages('sobre')" title="Sobre">help_center<p>Sobre</p></span>
+          <span
+            class="material-symbols-outlined"
+            class="active"
+            onclick="pages('notas')"
+            title="Anotações"
+            >chrome_reader_mode
+            <p>Notas</p></span
+          >
         </div>
-        
 
-     </div>  
-     
-     <div id="content_page">
-        <h1>IronTipping</h1>
-        <h3>Bem-vindo</h3>
-<br>
-        
-        <span class="under">Conheça a ferramenta</span>
+        <div class="link_conteiner">
+          <span
+            class="material-symbols-outlined"
+            onclick="pages('andamento')"
+            title="Base"
+            >view_compact_alt
+            <p>Base</p></span
+          >
+        </div>
 
-<div id="home_content">
+        <div class="link_conteiner">
+          <span
+            class="material-symbols-outlined"
+            onclick="pages('sobre')"
+            title="Sobre"
+            >help_center
+            <p>Sobre</p></span
+          >
+        </div>
+      </div>
+<!--
+      <div id="content_form">
 
-
-    <div>
-        <input type="text" id="nome">
-        <input type="email" id="email">
-        <button id="sub">enviar</button>
-
-
-    </div>
-
-<div class="card_main">
+        <div id="formNotas">
     
-    <span class="material-symbols-outlined" onclick="pages('links')" title="Links">dynamic_feed<p>Links</p></span>
-    
-    <hr>
-    <p class="p_card">
-        <br>
-Aqui é onde você vai encontrar as farramentas para usar no seu dia a dia,
-<br>
-<br>
-são links para portais, ferramentas de atendimento.
-
-    </p>
-</div>
-<div class="card_main">
-    <span class="material-symbols-outlined" onclick="pages('notas')" title="Links">chrome_reader_mode<p>Anotações</p></span>
-    
-    <hr>
-    <p class="p_card">
-        <br>
-Modulo de notas interativo e persistente,
-<br>
-<br>
-Faça suas Anotações salve, apague ou copie com um click
-
-    </p>
-</div>
-<div class="card_main">
-    <span class="material-symbols-outlined" onclick="pages('andamento')" title="Links">view_compact_alt<p>Base</p></span>
-    
-    <hr>
-    <p class="p_card">
-        <br>
-A Base tem como objetivo juntar varios comandos que usamos no dia a dia
-<br>
-<br>
-Assim podendo consultar na hora da necessidade
-
-    </p>
-</div>
-<div class="card_main">
-    <span class="material-symbols-outlined" onclick="pages('sobre')" title="Links">help_center<p>Sobre</p></span>
-    
-    <hr>
-    <p class="p_card">
-        <br>
-Em sobre você pode saber mais sobre mim e sobre o IronTipping
-<br>
-<br>
-E entrar em contato se necessario
-
-    </p>
-</div>
-
-
-
-</div>
-
-       </div>
-   
-    </main>
-
-   
-
-    <div id="overlay">
-        <div id="overlay_content">
-            <button onclick="off()"><span class="material-symbols-outlined">
-                chevron_left
-                </span></button>
-            <br>
-            <br>
-            <h2 id="Conta_titulo"> <span class="material-symbols-outlined">
-                account_circle
-                </span> conta</h2>
+            <fieldset>
+                <legend>Dados Site</legend>
+                <br>
+                <label for="incidente">Chamado:</label>
+                <br>
+                <input id="incidente" type="text" name="incidente">
+                <br>
+                <label for="site">Site:</label>
+                <br>
+                <input id="site" type="text" name="site">
+                <br>
+                <label for="operação">Operação:</label>
+                <br>
+                <input id="operação" type="text" name="operação">
+                <br>
+                <label for="assunto">Assunto:</label>
+                <br>
+                <input id="assunto" type="text" name="assunto">
+                <br>
+                <label for="descricao">Descrição:</label>
+                <br>
+                <input type="text" id="descricao" name="descricao">
                 <hr>
                 <br>
-                <fieldset id="fieldTxt">
-                    <legend>dados</legend>
-                    <p id="conta_nome">Nome:</p>
-                    <p id="conta_email">Email:</p>
-                    <p id="conta_nivel">nivel: 1</p>
-                </fieldset>
-                
-            <br>
-            <button onclick="logout()"><span class="material-symbols-outlined">exit_to_app</span> </button>
-
+            </fieldset>
+    
+            <fieldset>
+                <legend>Atualização</legend>
+                <br>
+                <textarea name="atualização" id="atualização" cols="30" rows="10"></textarea>
+            </fieldset> 
+    
+            <button id="sub">Gerar</button>
         </div>
+-->
+      <div id="content_page">
+        <h1>IronTipping</h1>
+        <h3>Bem-vindo</h3>
+        <br />
 
+        <span class="under">Conheça a ferramenta</span>
+
+        <div id="home_content">
+       
+          <div class="card_main">
+            <span
+              class="material-symbols-outlined"
+              onclick="pages('links')"
+              title="Links"
+              >dynamic_feed
+              <p>Links</p></span
+            >
+
+            <hr />
+            <p class="p_card">
+              <br />
+              Aqui é onde você vai encontrar as farramentas para usar no seu dia
+              a dia,
+              <br />
+              <br />
+              são links para portais, ferramentas de atendimento.
+            </p>
+          </div>
+          <div class="card_main">
+            <span
+              class="material-symbols-outlined"
+              onclick="pages('notas')"
+              title="Links"
+              >chrome_reader_mode
+              <p>Anotações</p></span
+            >
+
+            <hr />
+            <p class="p_card">
+              <br />
+              Modulo de notas interativo e persistente,
+              <br />
+              <br />
+              Faça suas Anotações salve, apague ou copie com um click
+            </p>
+          </div>
+          <div class="card_main">
+            <span
+              class="material-symbols-outlined"
+              onclick="pages('andamento')"
+              title="Links"
+              >view_compact_alt
+              <p>Base</p></span
+            >
+
+            <hr />
+            <p class="p_card">
+              <br />
+              A Base tem como objetivo juntar varios comandos que usamos no dia
+              a dia
+              <br />
+              <br />
+              Assim podendo consultar na hora da necessidade
+            </p>
+          </div>
+          <div class="card_main">
+            <span
+              class="material-symbols-outlined"
+              onclick="pages('sobre')"
+              title="Links"
+              >help_center
+              <p>Sobre</p></span
+            >
+
+            <hr />
+            <p class="p_card">
+              <br />
+              Em sobre você pode saber mais sobre mim e sobre o IronTipping
+              <br />
+              <br />
+              E entrar em contato se necessario
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="overlay">
+      <div id="overlay_content">
+        <button onclick="off()">
+          <span class="material-symbols-outlined"> chevron_left </span>
+        </button>
+        <br />
+        <br />
+        <h2 id="Conta_titulo">
+          <span class="material-symbols-outlined"> account_circle </span> conta
+        </h2>
+        <hr />
+        <br />
+        <fieldset id="fieldTxt">
+          <legend>dados</legend>
+          <p id="conta_nome">Nome:</p>
+          <p id="conta_email">Email:</p>
+          <p id="conta_nivel">nivel: 1</p>
+        </fieldset>
+
+        <br />
+        <button onclick="logout()">
+          <span class="material-symbols-outlined">exit_to_app</span>
+        </button>
+      </div>
     </div>
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDh62a53uwdfWv2dvqcjt-JBZMDKO5mjNA",
-          authDomain: "iron-tipping.firebaseapp.com",
-          projectId: "iron-tipping",
-          storageBucket: "iron-tipping.appspot.com",
-          messagingSenderId: "1097110695999",
-          appId: "1:1097110695999:web:cd8bbd1764e6baeadf088a",
-          measurementId: "G-LCHSS5D36V"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        push,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
-        document.getElementById("sub").addEventListener('click',  function writeUserData(nome, email) {
-        
-        name =  document.getElementById('nome').value
-        email = document.getElementById('email').value
-        
-        const db = getDatabase();
-        set(ref(db, 'users/' ), {
-        username: name,
-        email: email,
-    
-  })
-});
+      const firebaseConfig = {
+        apiKey: "AIzaSyDh62a53uwdfWv2dvqcjt-JBZMDKO5mjNA",
+        authDomain: "iron-tipping.firebaseapp.com",
+        projectId: "iron-tipping",
+        storageBucket: "iron-tipping.appspot.com",
+        messagingSenderId: "1097110695999",
+        appId: "1:1097110695999:web:cd8bbd1764e6baeadf088a",
+        measurementId: "G-LCHSS5D36V",
+      };
 
-          
-      </script>
-    
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      document
+        .getElementById("sub")
+        .addEventListener("click", function writeUserData(incidente, site, operacao, assunto, descricao, ) {
+          incidente = document.getElementById("incidente").value;
+          site = document.getElementById("site").value;
+          operacao = document.getElementById("operação").value;
+          assunto = document.getElementById("assunto").value;
+          descricao = document.getElementById("descricao").value;
+
+          const db = getDatabase();
+          push(ref(db, "Notas/"), {
+            Chamado: incidente,
+            Site: site,
+            Operação: operacao,
+            Assunto: assunto,
+            Descricao: descricao,
+          });
+        });
+    </script>
+
+   
     <script src="script/script.js"></script>
     <script src="script/perfil.js"></script>
     <script src="script/pages.js"></script>
     <script src="script/notas.js"></script>
-    
-    <footer>
-        Ver. 0.0.0
-    </footer>
 
-</body>
-
-
+    <footer>Ver. 0.0.0</footer>
+  </body>
 </html>
