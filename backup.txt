@@ -1,0 +1,92 @@
+
+
+
+======================== Conexão com firebase ==================================
+
+
+<script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        push,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDh62a53uwdfWv2dvqcjt-JBZMDKO5mjNA",
+        authDomain: "iron-tipping.firebaseapp.com",
+        projectId: "iron-tipping",
+        storageBucket: "iron-tipping.appspot.com",
+        messagingSenderId: "1097110695999",
+        appId: "1:1097110695999:web:cd8bbd1764e6baeadf088a",
+        measurementId: "G-LCHSS5D36V",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      document
+        .getElementById("sub")
+        .addEventListener("click", function writeUserData(incidente, site, operacao, assunto, descricao, ) {
+          incidente = document.getElementById("incidente").value;
+          site = document.getElementById("site").value;
+          operacao = document.getElementById("operação").value;
+          assunto = document.getElementById("assunto").value;
+          descricao = document.getElementById("descricao").value;
+
+          const db = getDatabase();
+          push(ref(db, "Notas/"), {
+            Chamado: incidente,
+            Site: site,
+            Operação: operacao,
+            Assunto: assunto,
+            Descricao: descricao,
+          });
+        });
+    </script>
+
+
+============================================Forms====================================================
+
+div id="content_form">
+
+    <div id="formNotas">
+
+        <fieldset>
+            <legend>Dados Site</legend>
+            <br>
+            <label for="incidente">Chamado:</label>
+            <br>
+            <input id="incidente" type="text" name="incidente">
+            <br>
+            <label for="site">Site:</label>
+            <br>
+            <input id="site" type="text" name="site">
+            <br>
+            <label for="operação">Operação:</label>
+            <br>
+            <input id="operação" type="text" name="operação">
+            <br>
+            <label for="assunto">Assunto:</label>
+            <br>
+            <input id="assunto" type="text" name="assunto">
+            <br>
+            <label for="descricao">Descrição:</label>
+            <br>
+            <input type="text" id="descricao" name="descricao">
+            <hr>
+            <br>
+        </fieldset>
+
+        <!--<fieldset>
+            <legend>Atualização</legend>
+            <br>
+            <textarea name="atualização" id="atualização" cols="30" rows="10"></textarea>
+        </fieldset> -->
+
+        <button id="sub">Gerar</button>
+    </div>
+
+    <div id="form_res">
